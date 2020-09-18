@@ -20,9 +20,18 @@ class NavBar extends React.Component {
         return (
             <React.Fragment>
                 <AppBar id="nav" position="relative" color="primary" className="navbar">
-                    <Grid container direction="row" justify="space-between">
+                    <Grid
+                        container
+                        direction="row"
+                        justify="space-between"
+                    >
                         <Grid item xs={4}>
-                            <Grid container direction="row">
+                            <Grid
+                                container
+                                direction="row"
+                                justify="center"
+                                alignItems="center"
+                            >
                                 <Grid item xs={1}>
                                     <img src={logo} />
                                 </Grid>
@@ -33,11 +42,11 @@ class NavBar extends React.Component {
                         </Grid>
                         <Grid item xs={8}>
                             <Tabs value={this.selected} onChange={this.handleChange}>
-                                <Tab label="About Me" />
-                                <Tab label="Projects" />
-                                <Tab label="Experience" />
-                                <Tab label="LinkedIn" />
-                                <Tab label="Github" />
+                                <Tab label="About Me" href="/about-me" />
+                                <Tab label="Projects" href="/projects" />
+                                <Tab label="Experience" href="/experience"  />
+                                <Tab label="LinkedIn" href="//www.linkedin.com/in/jenisha-thomas" />
+                                <Tab label="Github" href="//www.github.com/JenishaT" />
                             </Tabs>
                         </Grid>
                     </Grid>
