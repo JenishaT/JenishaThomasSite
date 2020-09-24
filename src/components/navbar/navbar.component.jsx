@@ -1,16 +1,35 @@
 import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
-import { Grid, Typography } from "@material-ui/core";
+import {
+    Grid, Typography, Drawer,
+    ListItem,
+    ListItemIcon,
+    ListItemText,
+    List
+} from "@material-ui/core";
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import logo from '../../assets/icon.gif';
-
+import github from '../../assets/github-icon.png';
+import linkedin from '../../assets/linkedin-icon.png';
+import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
+import WorkOutlineOutlinedIcon from '@material-ui/icons/WorkOutlineOutlined';
+import AccountTreeRoundedIcon from '@material-ui/icons/AccountTreeRounded';
+import MailOutlineRoundedIcon from '@material-ui/icons/MailOutlineRounded';
+import DescriptionOutlinedIcon from '@material-ui/icons/DescriptionOutlined';
 import "./navbar.styles.scss";
 
+const navOptions = [
+    { label: "About Me", icon: <InfoOutlinedIcon />, href: "/about-me" },
+    { label: "Experience", icon: <WorkOutlineOutlinedIcon />, href: "/experience" },
+    { label: "Projects", icon: <AccountTreeRoundedIcon />, href: "/projects" },
+    { label: "Resume", icon: <DescriptionOutlinedIcon />, href: "/resume" }
+]
 class NavBar extends React.Component {
     state = {
         selected: undefined
     }
+
 
     handleChange = (event, newSelected) => {
         this.setState({ selected: newSelected });
@@ -18,40 +37,75 @@ class NavBar extends React.Component {
 
     render() {
         return (
-            <React.Fragment>
-                <AppBar id="nav" position="relative" color="primary" className="navbar">
-                    <Grid
-                        container
-                        direction="row"
-                        justify="space-between"
-                    >
-                        <Grid item xs={4}>
-                            <Grid
-                                container
-                                direction="row"
-                                justify="center"
-                                alignItems="center"
-                            >
-                                <Grid item xs={1}>
-                                    <img src={logo} />
-                                </Grid>
-                                <Grid item xs={10}>
-                                    <Typography variant="h4">Jenisha Thomas</Typography>
-                                </Grid>
+            <Drawer id="nav" variant="permanent">
+                <Grid
+                    container
+                    direction="column"
+                    justify="center"
+                    alignItems="stretch">
+
+                    <Grid item xs={12}>
+                        <Typography variant="h4">Jenisha Thomas</Typography>
+                    </Grid>
+                    <Grid id="profile" item xs={12}>
+                        <img src={logo}></img>
+                    </Grid>
+
+                    <Grid id="social-icons" item xs={11}>
+                        <Grid
+                            container
+                            direction="row"
+                            justify="center"
+                            alignItems="center"
+                            spacing={4}
+                        >
+                            <Grid item xs={1}>
+                                <a href="//www.github.com/JenishaT"><img src={github}></img></a>
+                            </Grid>
+                            <Grid item xs={1}>
+                                <a href="//www.linkedin.com/in/jenisha-thomas"><img src={linkedin}></img></a>
+                            </Grid>
+                            <Grid item xs={1}>
+                                <MailOutlineRoundedIcon id="mail-icon" style={{ fontSize: 30 }} />
                             </Grid>
                         </Grid>
-                        <Grid item xs={8}>
-                            <Tabs value={this.selected} onChange={this.handleChange}>
-                                <Tab label="About Me" href="/about-me" />
-                                <Tab label="Projects" href="/projects" />
-                                <Tab label="Experience" href="/experience"  />
-                                <Tab label="LinkedIn" href="//www.linkedin.com/in/jenisha-thomas" />
-                                <Tab label="Github" href="//www.github.com/JenishaT" />
-                            </Tabs>
-                        </Grid>
                     </Grid>
-                </AppBar>
-            </React.Fragment>
+
+                    <section className="nav-options">
+                        <List>
+                            {navOptions.map(({ icon, label, href }) => (
+                                <Grid item xs={12}>
+                                    <ListItem
+                                        button
+                                        key={label}
+                                        selected={label === this.state.selected}
+                                        onClick={() => this.handleChange(label)}
+                                        component="a" href={href}
+                                    >
+                                        <Grid container justify="center" direction="row" alignItems="center">
+                                            <Grid item xs={2} md={2}>
+                                                <ListItemIcon id="icon">{icon}</ListItemIcon>
+                                            </Grid>
+                                            <Grid item md={5}>
+                                                <ListItemText>
+                                                    <Typography id="nav-label" variant="h5">
+                                                        {label}
+                                                    </Typography>
+                                                </ListItemText>
+                                            </Grid>
+                                        </Grid>
+
+                                    </ListItem> </Grid>
+                            ))}
+                        </List>
+                    </section>
+
+                </Grid>
+
+
+
+            </Drawer>
+
         )
     }
 }
