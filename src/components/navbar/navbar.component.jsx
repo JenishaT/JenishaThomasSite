@@ -9,7 +9,7 @@ import {
 } from "@material-ui/core";
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import logo from '../../assets/icon.gif';
+import logo from '../../assets/icon.jpg';
 import github from '../../assets/github-icon.png';
 import linkedin from '../../assets/linkedin-icon.png';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
@@ -30,8 +30,7 @@ class NavBar extends React.Component {
         selected: undefined
     }
 
-
-    handleChange = (event, newSelected) => {
+    handleChange = (newSelected) => {
         this.setState({ selected: newSelected });
     };
 
@@ -73,13 +72,13 @@ class NavBar extends React.Component {
 
                     <section className="nav-options">
                         <List>
-                            {navOptions.map(({ icon, label, href }) => (
+                            {navOptions.map(({ icon, label, href }, index) => (
                                 <Grid item xs={12}>
                                     <ListItem
                                         button
-                                        key={label}
-                                        selected={label === this.state.selected}
-                                        onClick={() => this.handleChange(label)}
+                                        key={index}
+                                        selected={href === document.location.pathname}
+                                        onClick={() => this.handleChange(index)}
                                         component="a" href={href}
                                     >
                                         <Grid container justify="center" direction="row" alignItems="center">
