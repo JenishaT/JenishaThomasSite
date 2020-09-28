@@ -1,11 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
 import { Grid } from "@material-ui/core"
 import './App.css';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from './components/homepage/homepage.component';
 
 import NavBar from "./components/navbar/navbar.component";
+import Resume from "./components/resume/resume.component";
+import Experience from "./components/experience/experience.component";
 class App extends React.Component {
   state = {
     hi: "hi"
@@ -26,6 +27,8 @@ class App extends React.Component {
               <BrowserRouter>
                 <Switch>
                   <Route exact path="/about-me" component={Home} />
+                  <Route exact path="/resume" component={Resume} />
+                  <Route exact path="/experience" component={Experience} />
                 </Switch>
               </BrowserRouter>
             </header>

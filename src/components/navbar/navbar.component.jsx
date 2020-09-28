@@ -1,15 +1,14 @@
 import React from 'react';
-import AppBar from '@material-ui/core/AppBar';
 import {
-    Grid, Typography, Drawer,
+    Grid, 
+    Typography,
+    Drawer,
     ListItem,
     ListItemIcon,
     ListItemText,
     List
 } from "@material-ui/core";
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import logo from '../../assets/icon.jpg';
+import profile from '../../assets/profile.jpg';
 import github from '../../assets/github-icon.png';
 import linkedin from '../../assets/linkedin-icon.png';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
@@ -47,7 +46,7 @@ class NavBar extends React.Component {
                         <Typography variant="h4">Jenisha Thomas</Typography>
                     </Grid>
                     <Grid id="profile" item xs={12}>
-                        <img src={logo}></img>
+                        <img src={profile} alt="Profile"></img>
                     </Grid>
 
                     <Grid id="social-icons" item xs={11}>
@@ -59,10 +58,10 @@ class NavBar extends React.Component {
                             spacing={4}
                         >
                             <Grid item xs={1}>
-                                <a href="//www.github.com/JenishaT"><img src={github}></img></a>
+                                <a href="//www.github.com/JenishaT"><img src={github} alt="Github"></img></a>
                             </Grid>
                             <Grid item xs={1}>
-                                <a href="//www.linkedin.com/in/jenisha-thomas"><img src={linkedin}></img></a>
+                                <a href="//www.linkedin.com/in/jenisha-thomas"><img src={linkedin} alt="LinkedIN"></img></a>
                             </Grid>
                             <Grid item xs={1}>
                                 <MailOutlineRoundedIcon id="mail-icon" style={{ fontSize: 30 }} />
