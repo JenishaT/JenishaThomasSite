@@ -6,6 +6,7 @@
 
 .App-header {
   padding-top: 30px;
+  padding-bottom: 30px;
   background-color: #d3edf1;
   min-height: 100vh;
   display: flex;
