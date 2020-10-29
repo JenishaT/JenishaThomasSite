@@ -87,7 +87,7 @@ class Experience extends React.Component {
                                             direction="row"
                                             justify="space-between"
                                         >
-                                            <Grid item>
+                                            <Grid item xs={8}>
                                                 <Typography id="position" variant="h5">
                                                     {experiences[index].position}
                                                 </Typography>
@@ -95,7 +95,7 @@ class Experience extends React.Component {
                                                     {experiences[index].company}
                                                 </Typography>
                                             </Grid>
-                                            <Grid item>
+                                            <Grid item xs={4}>
                                                 <Typography id="duration" variant="subtitle1">
                                                     {experiences[index].start} - {experiences[index].end}
                                                 </Typography>
