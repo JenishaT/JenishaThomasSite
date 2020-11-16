@@ -5,16 +5,6 @@ import './projects.styles.scss'
 
 const projects = [
     {
-        name: "OnTime High Fidelity Prototype",
-        date: "April 2020 – August 2020",
-        role: "UX Designer in a team of 6",
-        tools: "Figma",
-        link: ["https://www.figma.com/proto/emWIfJQTsqAGe8Kj0EeBDZ/OnTime?node-id=23%3A26&scaling=scale-down", "Figma Prototype"],
-        bullet_points: [
-            "Implemented high fidelity prototype of OnTime using Figma, an app designed to provide users with a list of nearby medical centers with wait and commute times, winning first place in the IBM design competition out of 30 other competitor groups"
-        ]
-    },
-    {
         name: "Find Dining Scarborough",
         date: "April 2020 – August 2020",
         role: "Full Stack Developer in a Team of 5",
@@ -23,6 +13,16 @@ const projects = [
         bullet_points: [
             "Created a website for client, where restaurant owners can create their unique restaurant page and customers can discover them, focusing on the storytelling of each restaurant",
             "Implemented CRUD functionalities allowing restaurant owners to add, edit and modify menu items, pictures and other restaurant specific information"
+        ]
+    },
+    {
+        name: "OnTime High Fidelity Prototype",
+        date: "April 2020 – August 2020",
+        role: "UX Designer in a team of 6",
+        tools: "Figma",
+        link: ["https://www.figma.com/proto/emWIfJQTsqAGe8Kj0EeBDZ/OnTime?node-id=23%3A26&scaling=scale-down", "Figma Prototype"],
+        bullet_points: [
+            "Implemented high fidelity prototype of OnTime using Figma, an app designed to provide users with a list of nearby medical centers with wait and commute times, winning first place in the IBM design competition out of 30 other competitor groups"
         ]
     },
     {
