@@ -48,6 +48,9 @@ class Home extends React.Component {
                         <Grid item xs={11}>
                             <Card id="card">
                                 <Typography id="cardHeading" variant="h5"> Education </Typography>
+                                <Typography id="uniHeading" variant="h8"> University of Toronto Scarborough </Typography>
+                                <br/>
+                                <Typography variant="body1"> Candidate, Honours Bachelor of Science </Typography>
                             </Card>
                         </Grid>
                     </Grid>
